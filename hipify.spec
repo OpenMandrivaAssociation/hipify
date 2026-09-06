@@ -14,6 +14,8 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	clang-devel >= %{rocm_llvm_maj_ver}
 BuildRequires:	llvm-devel >= %{rocm_llvm_maj_ver}
+BuildRequires:	llvm-static-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	perl
 
 %description
