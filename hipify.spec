@@ -7,7 +7,7 @@ Summary:	CUDA to HIP source translators
 License:	MIT
 Group:		Development/Tools
 URL:		https://github.com/ROCm/HIPIFY
-Source0:	%{rocm_component_source HIPIFY}
+Source0:	https://github.com/ROCm/HIPIFY/archive/refs/tags/therock-10.0.tar.gz#/HIPIFY-therock-10.0.tar.gz
 
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
