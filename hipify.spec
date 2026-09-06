@@ -30,7 +30,7 @@ sed -i '1s|#!.*python3|#!%{_bindir}/python|' bin/*.sh 2>/dev/null || true
 	-DHIPIFY_CLANG_TESTS=OFF \
 	-DHIPIFY_INSTALL_CLANG_HEADERS=OFF \
 	-G Ninja
-%ninja_build -C build
+%ninja_build
 
 %install
 %ninja_install -C build
