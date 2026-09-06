@@ -36,6 +36,13 @@ sed -i '1s|#!.*python3|#!%{_bindir}/python|' bin/*.sh 2>/dev/null || true
 
 %install
 %ninja_install -C build
+# Upstream installs scripts under libexec/hipify. Keep PATH names.
+mkdir -p %{buildroot}%{_bindir}
+for f in hipify-perl hipconvertinplace.sh hipconvertinplace-perl.sh \
+	hipexamine.sh hipexamine-perl.sh findcode.sh findcode_headers.sh \
+	findcode_sources.sh findcode_custom.sh finduncodep.sh; do
+	ln -sf %{_libexecdir}/hipify/$f %{buildroot}%{_bindir}/$f
+done
 
 %files
 %license LICENSE.txt
@@ -49,3 +56,4 @@ sed -i '1s|#!.*python3|#!%{_bindir}/python|' bin/*.sh 2>/dev/null || true
 %{_bindir}/findcode.sh
 %{_bindir}/findcode_*.sh
 %{_bindir}/finduncodep.sh
+%{_libexecdir}/hipify/
