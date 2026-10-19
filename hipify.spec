@@ -1,13 +1,13 @@
-# CUDA-to-HIP translators. TheRock 10.0.
+# CUDA-to-HIP translators. TheRock 10.1.
 
 Name:		hipify
-Version:	10.0.0
+Version:	10.1.0
 Release:	1
 Summary:	CUDA to HIP source translators
 License:	MIT
 Group:		Development/Tools
 URL:		https://github.com/ROCm/HIPIFY
-Source0:	https://github.com/ROCm/HIPIFY/archive/refs/tags/therock-10.0.tar.gz#/HIPIFY-therock-10.0.tar.gz
+Source0:	https://github.com/ROCm/HIPIFY/archive/refs/tags/therock-10.1.tar.gz#/HIPIFY-therock-10.1.tar.gz
 
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
@@ -23,7 +23,7 @@ hipify-clang and hipify-perl convert CUDA sources to HIP. RCCL and
 other TheRock components hipify NCCL-shaped trees at build time.
 
 %prep
-%autosetup -n HIPIFY-therock-10.0 -p1
+%autosetup -n HIPIFY-therock-10.1 -p1
 sed -i '1s|#!.*python3|#!%{_bindir}/python|' bin/*.sh 2>/dev/null || true
 
 %build
